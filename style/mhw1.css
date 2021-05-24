@@ -1,0 +1,403 @@
+/* HEADER */
+
+header {
+    background-image: url("../resources/images/hotel_vista_frontale.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    flex-shrink: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Playfair Display', 'serif';
+    margin-top: var(--nav-height);
+}
+
+header h1{
+    font-size: 3em;
+    margin: 0px;
+    z-index: 1;
+}
+
+header span{
+    width: 80%;
+    font-size: 1.3em;
+    font-style: italic;
+    z-index: 1;
+    text-align: center;
+}
+
+@media (max-width: 860px) {
+    header span {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 500px) {
+    header h1 {
+        font-size: 2.4em;
+    }
+    header span {
+        font-size: 1em;
+    }
+}
+
+#overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.3);
+    top: 0px;
+    left: 0px;
+}
+
+/* CONTENT SECTION */
+
+.content-sec {
+    margin: 0px auto 50px auto;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.content-msg {
+    margin: 20px auto;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+}
+
+.content-col {
+    width: calc(50% - 15px);
+    height: 400px;
+    margin: 15px 0px;
+    border-radius: 8px;
+    background-color: rgba(12, 11, 11, 0.979);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow: hidden; 
+    /*
+        Mi permette di evitare che il blocco contenente la immagine o il testo risulti visivamente più largo/alto
+        a causa di un suo elemento, inoltre non permette agli elementi interni di nascondere il bordo rotondo qui
+        definito.
+    */
+    position: relative;
+}
+
+.content-col img {
+    height: 70%;
+}
+
+.content-text { 
+    height: 30%;
+    width: auto;
+    padding: 4px 3px;
+    font-family: 'Averia Serif Libre', 'serif';
+}
+
+.content-text h4 {
+    margin-top: 3px;
+    margin-bottom: 0px;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.content-text p {
+    margin: 2px 0px;
+    font-size: 0.8em;
+    line-height: 1.2;
+    cursor: pointer;
+    white-space: pre-line;
+}
+
+.content-text div {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.6em;
+    font-weight: bold;
+    font-family: 'Merriweather', 'serif';
+}
+
+.content-tag {
+    text-transform: uppercase;
+    color: aqua;
+}
+
+@media (max-width: 900px)
+{
+    .content-sec {
+        width: 70%;
+    }
+
+    .content-col {
+        width: 100%;
+        height: 400px;
+    }
+}
+
+@media (max-width: 550px)
+{
+    .content-text h4 {
+        font-size: 1em;
+    }
+
+    .content-text p {
+        font-size: 0.7em;
+    }
+}
+
+/* SEARCH SECTION */
+
+.search-form{
+    width: 80%;
+    margin: 40px auto 20px auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;  
+}
+
+.search-form span {
+    margin-right: 10px;
+    color: blueviolet;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.search-form div {
+    width: 45%;
+    height: 32px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.search-form div input[type="text"] {
+    flex-grow: 1;
+    font-size: 1em;
+    border: 2px solid blueviolet;
+    border-radius: 3px 0px 0px 3px;
+    padding: 2px 3px;
+}
+
+.search-form div input[type="text"]:focus {
+    outline-offset: 2px;
+    outline-color: rgba(137, 43, 226, 0.274);
+}
+
+.search-form div button[type="submit"] {
+    background-color: blueviolet;
+    border: none;
+    border-radius: 0px 3px 3px 0px;
+    height: 100%;
+    cursor: pointer;
+}
+
+.search-form div button[type="submit"]:hover{
+    background-color: rgb(148, 42, 248);
+    border: none;
+    height: 100%;
+}
+
+.search-form div button[type="submit"] img{
+    max-height: 100%;
+}
+
+@media (max-width: 900px)
+{
+    .search-form{
+        width: 70%;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .search-form span {
+        margin: 0px 0px 10px 0px;
+    }
+
+    .search-form div {
+        width: 100%;
+    }
+}
+/* FAVORITE SECTION */
+
+.fav-sec {
+    width: 80%;
+    margin: 50px auto 0px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.fav-sec h2 {
+    color: blueviolet;
+    margin: 0px 0px 5px 0px;
+    font-size: 2em;
+}
+
+.fav-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+.fav-item {
+    margin: 0px 10px;
+    height: 300px;
+    width: 330px;
+    overflow: hidden;
+    background-color: rgba(12, 11, 11, 0.979);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+}
+
+.fav-item img {
+    height: 70%;
+}
+
+.fav-item div {
+    width: calc(100% - 8px);
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.6em;
+    font-weight: bold;
+    font-family: 'Merriweather', 'serif';
+    margin: 4px 3px;
+}
+
+.fav-item h4 {
+    font-family: 'Averia Serif Libre', 'serif';
+    text-align: center;
+    font-size: 0.9em;
+    margin: 0px 3px;
+}
+
+@media (max-width: 900px)
+{
+    .fav-list{
+        flex-direction: column;
+    }
+
+    .fav-item{
+        margin: 15px 0px;
+    }
+}
+
+@media (max-width: 500px)
+{
+    .fav-sec{
+        width: 70%;
+    }
+
+    .fav-item{
+        width: 100%;
+    }
+}
+
+/* ADD/REMOVE FAVORITE */
+
+.btn-rem-fav,
+.fav-item .btn-rem-fav,
+.btn-add-fav
+ {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 30px;
+    height: 30px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 0px;
+    cursor: pointer;
+}
+
+.btn-rem-fav {
+    background-image: url("../resources/icons/fav-rem.png");
+}
+
+
+.btn-add-fav {
+    background-image: url("../resources/icons/fav-add.png");
+}
+
+.btn-rem-fav:hover,
+.btn-add-fav:hover {
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 3px;
+}
+
+/* NEXT/PREVIOUS CONTENT BUTTON*/
+
+.next-cont,
+.prev-cont{
+    position: absolute;
+    height: 100px;
+    width: 60px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    z-index: 1;
+    top: calc(50% - 50px);
+    cursor: pointer;
+}
+
+.prev-cont:hover,
+.next-cont:hover{
+    background-color: rgba(0,0,0,0.1);
+    border-radius: 3px;
+}
+
+.next-cont{
+    right: -65px;
+    background-image: url("../resources/icons/next-cont.png");
+}
+
+.prev-cont{
+    left: -65px;
+    background-image: url("../resources/icons/prev-cont.png");
+}
+
+@media (max-width: 900px)
+{
+    .content-sec .next-cont,
+    .content-sec .prev-cont{
+        top: calc(100% - 8px);
+        width: 25px;
+        height: 50px;
+    }
+
+    .fav-sec .next-cont,
+    .fav-sec .prev-cont{
+        top: calc(100% - 10px);
+        width: 25px;
+        height: 50px;
+    }
+
+    .content-sec .next-cont,
+    .fav-sec .next-cont{
+        right: calc(50% - 60px);
+    }
+
+    .content-sec .prev-cont,
+    .fav-sec .prev-cont{
+        left: calc(50% - 60px);
+    }
+}
+
+.hidden {
+    display: none;
+}

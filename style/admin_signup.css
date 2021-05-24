@@ -1,0 +1,153 @@
+section {
+    margin-top: calc(var(--nav-height) + 60px);
+}
+
+form {
+    margin: 0px auto 60px auto;
+    background-color: blueviolet;
+    border: 1px solid darkorchid;
+    border-radius: 10px;
+    padding: 10px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Roboto', 'serif';
+    color: white;
+}
+
+form span {
+    width: 100%;
+    margin: 5px 0px;
+    font-size: 0.7em;
+    font-weight: bold;
+    color: yellow;
+    white-space: pre-line;
+}
+
+.general{
+    text-align: center;
+}
+
+form h3 {
+    color: chartreuse;
+    margin-bottom: 5px;
+}
+
+form label {
+    width: 100%;
+    margin: 5px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+form label.select-job {
+    justify-content: flex-start;
+}
+
+form label strong{
+    width: 20%;
+}
+
+form label select,
+form label input[type="text"] {
+    flex-grow: 1;
+    margin-left: 10px;
+    font-size: 1em;
+    border: 3px solid blueviolet;
+    border-radius: 5px;
+    padding: 2px 3px;
+}
+
+@media (max-width: 950px) {
+    form {
+        width: 90%;
+    }
+}
+
+@media (max-width: 600px) {
+    form label {
+        flex-wrap: wrap;
+    }
+
+    form label strong {
+        flex-grow: 1;
+    }
+    form label input[type="text"] {
+        flex-grow: 0;
+        margin-left: 0px;
+    }
+}
+
+form label select{
+    flex-grow: 0;
+}
+
+form label select:focus,
+form label input[type="text"]:focus {
+    border-color: chartreuse;
+    outline: none;
+}
+
+form input[type="submit"] {
+    background-color: chartreuse;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    margin: 5px 0px;
+    padding: 5px 10px;
+    width: 100px;
+    color: black;
+    cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+    background-color: rgba(128, 255, 0, 0.89);
+}
+
+form .subform {
+    width: 100%;
+}
+
+form .subform label input[type="text"] {
+    flex-grow: 0;
+    width: 130px;
+}
+
+form .subform label{
+    justify-content: flex-start;
+    align-items: center;
+}
+
+form .subform label span {
+    margin-left: 5px;
+    width: auto;
+}
+
+@media (max-width: 600px) {
+    form .subform label{
+        flex-wrap: wrap;
+    }
+
+    form .subform label strong{
+        flex-grow: 1;
+    }
+
+    form .subform label input[type="text"] {
+        flex-grow: 1;
+    }
+
+    form .subform label span {
+        width: 100%;
+        margin: 5px 0px;
+    }
+    
+}
+
+.none{
+    display: none;
+}
+
+.hidden{
+    visibility: hidden;
+}

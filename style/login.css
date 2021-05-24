@@ -1,0 +1,122 @@
+section {
+    margin-top: calc(var(--nav-height) + 60px);
+}
+
+form {
+    margin: 0px auto 60px auto;
+    background-color: blueviolet;
+    border: 1px solid darkorchid;
+    border-radius: 10px;
+    padding: 10px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Roboto', 'serif';
+    color: white;
+}
+
+form span {
+    width: 100%;
+    margin: 5px 0px;
+    font-size: 0.8em;
+    font-weight: bold;
+    color: yellow;
+}
+
+.general{
+    text-align: center;
+}
+
+form h3 {
+    color: chartreuse;
+}
+
+form label {
+    width: 100%;
+    margin: 5px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+form label strong{
+    width: 20%;
+}
+
+form label input[type="text"],
+form label input[type="password"] {
+    flex-grow: 1;
+    margin-left: 10px;
+    font-size: 1em;
+    border: 3px solid blueviolet;
+    border-radius: 5px;
+    padding: 2px 3px;
+}
+
+
+form label input[type="text"]:focus,
+form label input[type="password"]:focus {
+    border-color: chartreuse;
+    outline: none;
+}
+
+form div{
+    margin: 5px 0px;
+    display: flex;
+    align-items: center;
+}
+
+.remember{
+    justify-content: flex-start;
+    width: 100%;
+}
+
+form div button,
+form div input[type="submit"] {
+    background-color: chartreuse;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    margin: 0px 5px;
+    padding: 5px 10px;
+    width: 100px;
+    color: black;
+    cursor: pointer;
+}
+
+form div button:hover,
+form div input[type="submit"]:hover {
+    background-color: rgba(128, 255, 0, 0.89);
+}
+
+form div button a{
+    text-decoration: none;
+    color: black;
+}
+
+.hidden{
+    visibility: hidden;
+}
+
+@media (max-width: 800px) {
+    form {
+        width: 90%;
+    }
+}
+
+@media (max-width: 600px) {
+    form label {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    form label strong{
+        margin-left: 13px;
+    }
+
+    form span {
+        margin-left: 25px;
+    }
+
+
+}

@@ -1,0 +1,559 @@
+.booking-sec {
+    margin-top: calc(var(--nav-height));
+    font-family: 'Roboto', 'serif';
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+/* SIDE BAR */
+.search-side-bar {
+    position: sticky;
+    top: var(--nav-height);
+    left: 0px;
+    background-color: blueviolet;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    padding: 0px 10px;
+    width: 220px;
+    height: calc(100vh - var(--nav-height));
+}
+
+.search-side-bar .close-sidebar{
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    background-color: chartreuse;
+    background-image: url("../resources/icons/sidebar-close.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    z-index: 1;
+    top: 0;
+    right: -50px;
+    cursor: pointer;
+}
+
+.search-side-bar .close-sidebar:hover{
+    background-color: rgba(128, 255, 0, 0.562);
+}
+
+.open-sidebar{
+    position: fixed;
+    height: 50px;
+    width: 50px;
+    background-color: chartreuse;
+    background-image: url("../resources/icons/sidebar-open.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    z-index: 1;
+    top: var(--nav-height);
+    left: 0;
+    cursor: pointer;
+}
+
+.open-sidebar:hover{
+    background-color: rgba(128, 255, 0, 0.562);
+}
+
+.search-side-bar form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.search-side-bar form label {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0px 5px;
+    width: 100%;
+}
+
+.search-side-bar form label strong {
+    padding: 0px 3px;
+    margin: 5px 0px;
+}
+
+.search-side-bar .label-checkbox {
+    flex-direction: row;
+    align-items: center;
+}
+
+/* RESPONSIVE */
+.start-visible-hidden {/* In questo modo la side bar inizia visibile ma se si applica la regola responsive inizia invisibile */
+    display: flex;
+}
+
+.start-hidden-visible { /* In questo modo il pulsante per aprire la side bar inizia invisibile ma se si applica la regola inzia visibile */
+    display: none;
+}
+
+@media (max-width: 950px) {
+    .start-visible-hidden {
+        display: none;
+    }
+
+    .start-hidden-visible {
+        display: block;
+    }
+
+    .search-side-bar {
+        position: fixed;
+        z-index: 2;
+    }
+}
+
+@media (max-width: 550px) {
+    .search-side-bar {
+        font-size: 0.9em;
+    }
+}
+
+/* INPUT */
+.input{
+    font-size: 1em;
+    border: 3px solid transparent;
+    border-radius: 5px;
+}
+
+.input:focus {
+    border-color: chartreuse;
+    outline: none;
+}
+
+.confirm{
+    background-color: chartreuse;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    margin: 20px 0px;
+    padding: 5px 10px;
+    width: 120px;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.confirm-form{
+    background-color: chartreuse;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    margin: 0px;
+    padding: 5px 10px;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.confirm:hover {
+    background-color: rgba(128, 255, 0, 0.89);
+}
+
+.confirm a {
+    text-decoration: none;
+    color: black;
+}
+
+/* SIDE-BAR INPUT */
+.search-side-bar form label input[type="date"]{
+    width: calc(100% - 6px);
+}
+
+.search-side-bar form label input[type="text"]{
+    width: calc(100% - 10px);
+}
+
+.search-side-bar form input[type="submit"] {
+    background-color: chartreuse;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    margin: 20px 0px;
+    padding: 5px 10px;
+    width: 120px;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.search-side-bar form input[type="submit"]:hover {
+    background-color: rgba(128, 255, 0, 0.89);
+}
+
+/*SHOW-ROOM*/
+.show-room {
+    margin: 0px auto;
+    width: 60%;
+}
+
+.show-room .error {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.show-room .error span {
+    padding: 30px;
+    background-color: blueviolet;
+    border-radius: 10px;
+    color: yellow;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.show-room .room {
+    width: 100%;
+    background-color: blueviolet;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.show-room .room .img-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.show-room .room .img-container span {
+    font-size: 2em;
+    color: yellow;
+    margin: 10px 0px;
+}
+
+.show-room .room .img-container img {
+    max-width: 100%;
+}
+
+.show-room .room .img-container .next-photo{
+    position: absolute;
+    height: 100px;
+    width: 60px;
+    background-image: url("../resources/icons/next-photo.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    z-index: 1;
+    top: calc(50% - 50px);
+    right: 0;
+    cursor: pointer;
+}
+
+.show-room .room .img-container .prev-photo{
+    position: absolute;
+    height: 100px;
+    width: 60px;
+    background-image: url("../resources/icons/prev-photo.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    z-index: 1;
+    top: calc(50% - 50px);
+    left: 0;
+    cursor: pointer;
+}
+
+.show-room .room .img-container .next-photo:hover,
+.show-room .room .img-container .prev-photo:hover {
+    background-color: rgba(0,0,0,0.1);
+    border-radius: 3px;
+}
+
+.show-room .room .img-container .num-photo {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    padding: 2px;
+    color: white;
+    text-align: center;
+    background-color: rgba(0,0,0,0.1);
+    border-radius: 3px;
+}
+
+.two-col-cont {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.first-col {
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 5px 10px;
+}
+
+.first-col span {
+    color: chartreuse;
+}
+
+.first-col .icon-cont span {
+    color: white;
+}
+
+.second-col {
+    width: 48%;
+    display: flex;
+    padding: 5px 10px;
+}
+
+.second-col p {
+    margin-top: 0px;
+}
+
+
+@media (max-width: 700px) {
+    .show-room {
+        width: 90%;
+    }
+
+    .two-col-cont {
+        font-size: 0.8em;
+    }
+}
+
+/* ICON */
+
+.icon-cont {
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    height: 30px;
+    width: 30px;
+    margin-right: 10px;
+    background-size: contain;
+    background-repeat: none;
+}
+
+.persons-icon{
+    background-image: url("../resources/icons/persons-icon.png");
+}
+
+.single-bed-icon{
+    background-image: url("../resources/icons/bed-icon.png");
+}
+
+.matrimonial-bed-icon{
+    background-image: url("../resources/icons/matrimonial-icon.png");
+}
+
+.sqm-icon{
+    background-image: url("../resources/icons/sqm.png");
+}
+
+.wifi-icon {
+    background-image: url("../resources/icons/wifi-icon.png");
+}
+
+.minibar-icon {
+    background-image: url("../resources/icons/minibar-icon.png");
+}
+
+.soundproofing-icon {
+    background-image: url("../resources/icons/noaudio-icon.png");
+}
+
+.swimming-pool-icon {
+    background-image: url("../resources/icons/pool-icon.png");
+}
+
+.private-bathroom-icon {
+    background-image: url("../resources/icons/bathroom-icon.png");
+}
+
+.air-conditioning-icon {
+    background-image: url("../resources/icons/airconditioning-icon.png");
+}
+
+/* MODAL WINDOW */
+
+/* MESSAGE WINDOW */
+.modal-msg {
+    font-family: 'Roboto', 'serif';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+.modal-msg div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: blueviolet;
+    width: 50%;
+    border-radius: 10px;
+}
+
+.modal-msg div h3 {
+    color: yellow;
+}
+
+.modal-msg div p {
+    margin: 0px 10px;
+    white-space: pre-line;
+    font-weight: bold;
+}
+
+@media (max-width: 900px) {
+    .modal-msg div {
+        width: 90%;
+    }
+}
+@media (max-width: 550px) {
+    .modal-msg div p {
+        font-size: 0.8em;
+    }
+}
+
+/* BOOKING WINDOW */
+
+.modal-booking {
+    font-family: 'Roboto', 'serif';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+.modal-booking div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: blueviolet;
+    width: 50%;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+@media (max-width: 900px) {
+    .modal-booking div {
+        width: 90%;
+    }
+}
+
+.modal-booking div h2 {
+    color: chartreuse;
+}
+
+.modal-booking div h3 {
+    margin-top: 0px;
+}
+
+.modal-booking div label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 5px;
+    width: 80%;
+}
+
+.modal-booking div label strong {
+    margin: 5px 20px;
+}
+
+.modal-booking div label input {
+    flex-grow: 1;
+}
+
+.modal-booking div .check-date {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-booking div .check-date label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px 5px;
+    width: 45%;
+}
+
+.modal-booking div .check-date label strong {
+    margin: 5px 0px;
+}
+
+.modal-booking div span.error {
+    white-space: pre-line;
+    width: 90%;
+    color: yellow;
+}
+
+@media (max-width: 550px) {
+    .modal-booking div span.error {
+        font-size: 0.7em;
+    }
+
+    .modal-booking div .check-date {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .modal-booking div .check-date label {
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        margin: 5px 0px;
+    }
+
+    .modal-booking div .check-date label strong {
+        margin: 0px 5px;
+    }
+    .modal-booking div .check-date label input {
+        flex-grow: 0;
+    }
+}
+
+.modal-booking div .button-area {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: center
+}
+
+.modal-booking div .button-area button {
+    margin: 20px 10px;
+}
+
+.no-scroll{
+    overflow: hidden;
+}
+
+.hidden {
+    display: none;
+}
